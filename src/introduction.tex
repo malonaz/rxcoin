@@ -14,18 +14,23 @@ This block is now added to the blockchain and the miner received a pre-fixed sum
 How are addresses generated? 
 Any user may generate any number of private keys free of cost.
 A series of cryptographic hash functions are applied to the private key to derive a public key from it.
-To put it bluntly, hash functions are functions f(x) = y, such that given x, it is computationally inexpensive to find y,
+To put it simply, hash functions are functions f(x) = y, such that given x, it is computationally inexpensive to find y,
 but infeasible to compute x given y.
 This public key is hashed for compression purposes to form an address.
-This address is what will be present in the decentralized database, for any of your operations.
-
+This address is what will be present in the decentralized database, for any of operations you partake in.
 
 \begin{center}
-\includegraphics[scale = 0.25]{diagrams/transaction_diagram.png}
+\includegraphics[scale = 0.20]{diagrams/transaction_diagram.png}
 \end{center}
 
 
-Let us now look at how a transaction works.
+The diagram above shows how an operation (here a transaction on the bitcoin protocol) is carried out.\\
+1) You create a hash of the operation data (e.g. sender, receiver, message). Your private key is then used to sign this hash,
+to create a digital signature.\\
+2) You broadcast the operation data to the mining network, together with your digital signature and your public key.\\
+3) Now, mining nodes can compute inexpensively whether your public key and your digital signature where made using the same private key.\\
+
+
 
 
 
