@@ -1,22 +1,33 @@
-Let us now briefly discuss a few important applications of blockchain.
-Earlier, I repeatedly mentioned \emph{operations} rather than \emph{transactions} intentionally.
+Earlier, we repeatedly mentioned \emph{operations} rather than \emph{transactions} intentionally.
 When speaking about the infamous Bitcoin, it is accurate enough to speak of \emph{transactions} as its blockchain
 only allows a small set of transaction-related operations.
 Bitcoin and its blockchain thus form a cryptocurrency, with limited use beyond transacting at poor lentency.
 
 In comes Ethereum...
 Whereas Bitcoin restricts it blockchain to transaction-related operations, Ethereum has embraced all operations.
-More precisely, they have implemented a turing-complete blockchain.
+Ethereum designed a coding language, made up of primitives called \emph{instructions} that Ethereum mining software can interpret.
+An instruction is a primitive such as ADD, STORE, LOAD, JUMP. (This will be important later)
+Their set of instructions is turing-complete.
 A system is said to be turing complete if it can be used to solve any computable problem.
+
 Ethereum's blockchain is thus a platform rather than a cryptocurrency.
-They designed a coding language that Ethereum mining software can interpret. 
 A user is free broadcast any data and/or code to the platform, and as miners validate a block,
 they execute this code to update the state of the database.
-Codes, often referred to as \emph{smart contracts}, can call on other contracts, or be called upon.
+These codes, often referred to as \emph{smart contracts}, can call on other contracts, or be called upon.
+
+Since miners must compute these smart contracts'code, what happens if a user decides to spam the mining network with
+smart contracts that contain useless code loops. 
+Any miner that picks such an operation from the pool of pending operations will not be able to process the block.
+Such an attack is known as a \emph{distributed denial of service}.
+In order to prevent such an attack, Ethereum charges a fee per code instruction, paid in their digital currency called Ether.
+Ether is used to pay miners and pay for transactions.
+Ethereum's blockchain keeps the balances of users in its decentralized database.
+Hence, if a user sends a smart contract from an address, he must have enough Ether at this address to see his contract's code
+to completion.
+
+
+
 Using this framework, anyone can create a application that uses Ethereum's decentralized database.
 Today, most of the cryptocurrencies or ICOs you read about, have not implemented a blockchain themselves,
 but rather, use Ethereum's blockchain.
 
-RxCoin aims to disrupt the healthcare industry by introducing a blockchain devoted to healthcare-related operations.
-One that would see its decentralized database bring transparency about this opaque industry
-and remove existing friction between manufacturers, prescribers and patients. 
