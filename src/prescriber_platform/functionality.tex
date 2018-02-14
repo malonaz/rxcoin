@@ -1,10 +1,26 @@
 Upon downloading the app, users will be assigned a private key generated through their Social Security Number
 along with a derived public key.
-Prescribers will have to upload proof that they are legally allowed to prescribe.
-Validation of their status will be written to the blockchain database.
 Upon conclusion of diagnosis, prescribers will have the ability to encrypt their prescription using the patient's public key
-and securely push their prescription to RxChain, along with any parameters such as an expiration date.
+and securely push their prescription to RxChain, along with any parameters such as quantity, frequency or expiration date.
 This prescription will live on the chain, encrypted as to respect privacy and anomnity, and evolving as its parameters dictate it.
 Patients will be able to redeem their prescription at the pharmacy, or on our manufacturer-consumer platform, to consume their prescription.
-The prescription will be associated to the patient's public key on the RxChain decentralized database and the private key will be used to verify the patient's identity.
-Public and private keys will be abstracted away from the users, as for all apps that follow RxChain's app development guidelines.
+The prescription will be associated to the patient's public key on the RxChain decentralized database.
+The patient's private key will be used to verify the patient's identity.
+The prescription's validity will be queried from the decentralized database.
+Upon redemption, the prescription will be consumed, and marked invalid on the decentralized database.
+
+The law requires a prescription to be legally confirmed by a pharmacist.
+Thus, when a prescription contract between a prescriber and a patient is pushed onto RxChain,
+a cryptographic key will be generated and attached to it.
+This key will decrypt prescription details such as the doctor's credentials, authentication and the prescribed drug quantity.
+Such contract + key contracts will sit on the chain, waiting for a pharmacist to validate it.
+To do so, a pharmacist, identified by his unique public key will enter a contract,
+and be able to use the key to decrypt the prescription's details.
+If the prescription is not validated, the contract is voided.
+Upon verification, the pharmacist is rewarded with a pre-determined number of RxCoin.
+This protocol ensures a fault-proof, legally viable and secure
+prescription verification system.
+
+Of course, all technical details such as public and private keys will be abstracted away from the users,
+as for all apps that follow RxChain's app development guidelines.
+
